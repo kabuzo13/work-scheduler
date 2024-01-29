@@ -1,7 +1,8 @@
 $(document).ready(function(){
 
 var myInterval = setInterval(function(){
-    var currentDate = dayjs().format('dddd MMMM D YYYY');
+    dayjs.extend(window.dayjs_plugin_advancedFormat);
+    var currentDate = dayjs().format('dddd MMMM Do YYYY');
     var currentTime = dayjs()
     $('#currentDay').text(currentDate + " " + currentTime.format('h:mm:ss a'))
 }, 1000);
